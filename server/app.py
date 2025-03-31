@@ -57,8 +57,8 @@ chat_session = model.start_chat(history = history)
 
 
 # client/Saarthi
-app = Flask(__name__, static_folder='../client/Saarthi/dist/', static_url_path='/')
-# app = Flask(__name__, static_folder=os.path.abspath("client/dist"), static_url_path="/")#for render
+# app = Flask(__name__, static_folder='../client/Saarthi/dist/', static_url_path='/')
+app = Flask(__name__, static_folder='/opt/render/project/src/client/Saarthi/dist', static_url_path="/")#for render
 cors = CORS(app,origins=["*"])
 
 
