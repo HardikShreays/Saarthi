@@ -8,7 +8,7 @@ import google.generativeai as genai
 import os
 
 
-load_dotenv()
+# load_dotenv()
 
 def send_message(query):
   response = chat_session.send_message(query).text
@@ -21,7 +21,7 @@ def send_message(query):
 
   return response
 
-print(os.environ.get("API"))
+# print(os.environ.get("API"))
 genai.configure(api_key=os.environ.get("API"))
 # genai.configure(api_key="AIzaSyAPkzLPXlAYpFPxRogzufnM03Qukt9KiiA")
 
