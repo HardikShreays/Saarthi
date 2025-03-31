@@ -64,6 +64,14 @@ cors = CORS(app,origins=["*"])
 
 @app.route('/')
 def index():
+    static_path = os.path.abspath(app.static_folder)
+    index_file = os.path.join(static_path, 'index.html')
+    
+    print(f"Serving frontend from: {static_path}")  # Debugging
+    if not os.path.exists(index_file):
+        print("🚨 index.html NOT FOUND!")
+        return "Frontend build not found", 500  # Return a clear error if missing
+    
     return send_from_directory(app.static_folder, 'index.html')
 
 @app.route('/api/chat', methods=['GET'])
