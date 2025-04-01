@@ -8,7 +8,7 @@ import google.generativeai as genai
 import os
 
 
-# load_dotenv()
+load_dotenv()
 
 def send_message(query):
   response = chat_session.send_message(query).text
@@ -57,8 +57,8 @@ chat_session = model.start_chat(history = history)
 
 
 # client/Saarthi
-# app = Flask(__name__, static_folder='../client/Saarthi/dist/', static_url_path='/')
-app = Flask(__name__, static_folder=os.path.abspath("client/Saarthi/dist"), static_url_path="/")
+app = Flask(__name__, static_folder='../client/Saarthi/dist/', static_url_path='/')
+# app = Flask(__name__, static_folder=os.path.abspath("client/Saarthi/dist"), static_url_path="/")
 
 
 cors = CORS(app,origins=["*"])
@@ -104,4 +104,4 @@ def post_chat():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8000)
+    app.run(host="0.0.0.0", port=8000) 
