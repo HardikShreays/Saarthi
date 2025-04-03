@@ -21,7 +21,7 @@ def send_message(query):
 
   return response
 
-print(os.environ.get("API"))
+# print(os.environ.get("API"))
 genai.configure(api_key=os.environ.get("API"))
 
 
