@@ -59,7 +59,7 @@ export default function ChatUi() {
   
   useEffect( () => {
     async function fetchData() {
-    const res = await fetch("http://127.0.0.1:8000/api/chat");
+    const res = await fetch("/api/chat");
     const data = await res.json();
     setChats(data);
     // console.log(data);
